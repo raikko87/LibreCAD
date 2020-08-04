@@ -57,7 +57,7 @@ void QG_DlgInitial::languageChange()
 void QG_DlgInitial::init() {
     // Fill combobox with languages:
     QStringList languageList = RS_SYSTEM->getLanguageList();
-    QString defaultLanguage=RS_SYSTEM->symbolToLanguage(QString("en"));
+    QString defaultLanguage=RS_SYSTEM->symbolToLanguage(QString("tr_TR"));
     for (QStringList::Iterator it = languageList.begin();
         it!=languageList.end();
         it++) {
@@ -87,9 +87,8 @@ void QG_DlgInitial::setPixmap(const QPixmap& p) {
 }
 
 void QG_DlgInitial::ok() {
-    RS_SETTINGS->beginGroup("/Appearance");
-    RS_SETTINGS->writeEntry("/Language",
-                            cbLanguage->itemData(cbLanguage->currentIndex()));
+    RS_SETTINGS->beginGroup("/Appearance");    
+    RS_SETTINGS->writeEntry("/Language", cbLanguage->itemData(cbLanguage->currentIndex()));
     RS_SETTINGS->writeEntry("/LanguageCmd",
                             cbLanguage->itemData(cbLanguage->currentIndex()));
     RS_SETTINGS->endGroup();
