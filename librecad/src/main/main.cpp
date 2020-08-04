@@ -90,6 +90,9 @@ int main(int argc, char** argv)
 
     bool first_load = settings.value("Startup/FirstLoad", 1).toBool();
 
+    // TGS debugging purposes
+    first_load = true;
+
     const QString lpDebugSwitch0("-d"),lpDebugSwitch1("--debug") ;
     const QString help0("-h"), help1("--help");
     bool allowOptions=true;
